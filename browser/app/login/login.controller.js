@@ -1,15 +1,18 @@
 app.
-  controller('LoginCtrl', function($scope, $http, $state) {
+  controller('LoginCtrl', function($scope, $state, AuthFactory) {
     $scope.user = {};
     $scope.submitLogin = function() {
-      console.log('submitting...')
-      $http.post('/login', {email: 'uzoho@hu.gov', password: 'uf'})
-        .then(function() {
-          console.log('got here');
+      AuthFactory.login($scope.user)
+        .then(function(user){
           $state.go('stories');
         })
-        .catch(function(err) {
+        .catch(function(err){
           console.error(err);
         });
+      
     }
-  })
+  });
+
+  //{email: 'uzoho@hu.gov', password: 'uf'}
+
+

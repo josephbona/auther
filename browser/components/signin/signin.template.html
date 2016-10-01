@@ -1,6 +1,6 @@
-<!-- <div class="signin-container">
+<div class="signin-container">
   <div class="buffer local">
-    <form>
+    <form ng-submit="action()">
       <div class="form-group">
         <label>email</label>
         <input ng-model="user.email" type="text" class="form-control" required />
@@ -9,7 +9,7 @@
         <label>password</label>
         <input ng-model="user.password" type="password" class="form-control" required />
       </div>
-      <button ng-click="submitLogin()" type="submit" class="btn btn-block btn-primary">login</button>
+      <button type="submit" class="btn btn-block btn-primary">signup</button>
     </form>
   </div>
   <div class="or buffer">
@@ -21,5 +21,3 @@
     <p><oauth-button provider-name="GitHub"></oauth-button></p>
   </div>
 </div>
- -->
- <sign-in action="submitLogin" model="user"></sign-in>

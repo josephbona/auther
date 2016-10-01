@@ -23,14 +23,14 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ui-sref-active="active">
+        <li ng-show="!isLoggedIn()" ui-sref-active="active">
           <a ui-sref="signup">signup</a>
         </li>
-        <li ui-sref-active="active">
+        <li ng-show="!isLoggedIn()" ui-sref-active="active">
           <a ui-sref="login">login</a>
         </li>
-        <li>
-          <button class="navbar-btn btn btn-default">logout</button>
+        <li ng-show="isLoggedIn()">
+          <button ng-click="submitLogOut()" class="navbar-btn btn btn-default">logout</button>
         </li>
       </ul>
     </div>
